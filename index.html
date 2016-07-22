@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" ng-app = "timeLine">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Timeline</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.css"
+
+</head>
+
+<body ng-controller="timelineCtrl">
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-7 col-lg-7">
+                <div class="timeline-content">
+                    <h1>Dynamic Timeline Test</h1>
+                        <div class="new-event-link">Add new event</div>
+
+                    <div id="timeline-fields">
+                        <div class="field">
+                            <div class="field-text pull-left">
+                                Date
+                            </div>
+                            <input type="text" id="datepicker" required class="field-input pull-right" name="dateOfEvent" ng-model="data.date" value"click...">
+                            <div class="clear"></div>
+                        </div>
+                             <div class="field">
+                             <div class="field-text pull-left">
+                                Color
+                            </div>
+                            <input type="text" class="field-input color {hash:true} pull-right" name="colorOfEvent" ng-model="data.color">
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="field">
+                            <div class="field-text pull-left">
+                                Name
+                            </div>
+                            <input type="text" class="field-input pull-right" name="nameOfPerson" ng-model="data.name">
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="add-event-button" ng-click="addEvent()">+Add</div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-5 col-lg-5">
+                <div class="timeline" ng-show="show" ng-repeat="event in events | orderBy: 'date'">
+                    <div class="line"></div>
+
+                    <div class="event">
+                        <div class="event-date pull-left">{{event.date}}</div>
+                        <div class="circle pull-left" style="background-color: {{event.color}}"></div>
+                        <div class="event-name pull-left">{{event.name}}</div>
+                        <div class="clear"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================
+         SCRIPTS
+    ============================== -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="jscolor/jscolor.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/datepicker.js"></script>
+</body>
+
+</html>

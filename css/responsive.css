@@ -1,0 +1,29 @@
+@media (max-width: 992px) {
+	.timeline {
+		float: right;
+	}
+}
+
+@media (max-width: 767px) {
+	.timeline-content {
+		text-align: center;
+	}
+	#timeline-fields {
+		margin: 0 auto;
+		margin-top: 20px;
+	}
+
+	.timeline {
+		float: none;
+		margin: 0 auto;
+		margin-top: 60px;
+		max-width: 240px;
+	}
+
+	.line {
+		left: 110px;
+	}
+	.event {
+		left: 0;
+	}
+}
